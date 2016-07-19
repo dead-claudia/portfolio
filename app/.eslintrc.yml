@@ -1,0 +1,4 @@
+root: true
+extends:
+    - isiahmeadows/browser
+    - isiahmeadows/node-4

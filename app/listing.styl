@@ -1,0 +1,25 @@
+@charset 'utf-8'
+
+.listing-item
+    margin: 0 auto
+    border-bottom: 2px solid black
+    padding-left 1em
+    padding-right 1em
+    padding-bottom: 2em
+    margin-bottom: 2em
+    width: 95%
+
+    &:last-child
+        border-bottom: none
+        margin-bottom: 0
+
+    img
+        max-width: 25%
+        max-height: 200px
+        float: left
+        margin-right: 2em
+
+    &:after
+        content: ""
+        display: table
+        clear: both

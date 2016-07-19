@@ -1,0 +1,73 @@
+@charset 'utf-8'
+
+.edit-page
+    margin: 0 auto
+    width: 100%
+
+    form
+        margin: 0 auto
+        width: 90%
+
+.edit-title
+    display: block
+    margin: 1em auto
+    width: 100%
+    font-size: 2em
+
+    input
+        width: 100%
+        padding: 0.5em
+
+.edit-file-upload
+    margin: 3em auto
+    width: 100%
+    text-align: center
+
+    label
+        margin: 0 auto
+        cursor: pointer
+
+    img
+        max-height: 500px
+        display: block
+        margin: 0 auto
+
+    img:hover
+        filter: brightness(1.2)
+
+.edit-description
+    margin: 3em auto
+    width: 100%
+
+    label
+        display: block
+        height: 100%
+        width: 100%
+
+    p
+        width: 100%
+
+    textarea
+        margin-top: 1em
+        padding: 1em
+        width: 100%
+        min-height: 100px
+        max-height: 300px
+        resize: vertical
+        set-scrollbar()
+
+.edit-save
+    margin: 1em auto
+    margin-top: -1.5em
+    width: form-width
+
+    .route-button
+        margin-bottom: 2em
+        float: right
+
+        .button-text:after
+            content: "|"
+            margin-left: 0.4em
+            font-size: 1em
+            position: relative
+            top: -1px

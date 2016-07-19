@@ -1,0 +1,34 @@
+@charset 'utf-8'
+
+set-scrollbar()
+    &::-webkit-scrollbar
+        width: 8px
+
+    &::-webkit-scrollbar-track
+        border-radius: 16px
+        background-color: #eaeaea
+        box-shadow inset 0 0 2px 2px rgba(224, 224, 224, 0.9)
+
+    &::-webkit-scrollbar-thumb
+        border-radius: 16px
+        background-color: #cacaca
+        box-shadow inset 0 0 2px 2px rgba(184, 184, 184, 0.9)
+
+html, body
+    height: 100%
+    width: 100%
+
+#app
+    height: 100%
+    width: 100%
+
+.button-text
+    margin-right: 0.25em
+
+.button-symbol
+    margin-left: 0.25em
+
+@require './start.styl'
+@require './page.styl'
+@require './listing.styl'
+@require './edit.styl'

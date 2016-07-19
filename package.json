@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "portfolio",
+  "version": "0.0.0",
+  "description": "A simple, easy-to-use portfolio manager",
+  "main": "main.js",
+  "scripts": {
+    "debug": "electron debug.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isiah Meadows",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.4",
+    "chokidar": "^1.6.0",
+    "eslint": "^3.1.0",
+    "eslint-config-isiahmeadows": "^0.1.6",
+    "stylus": "^0.54.5",
+    "thallium": "^0.2.2",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "autosize": "^3.0.16",
+    "bootstrap": "^3.3.6",
+    "electron-prebuilt": "^1.2.7",
+    "jquery": "^2.2.4",
+    "minimist": "^1.2.0",
+    "mithril": "^0.2.5",
+    "normalize.css": "^4.2.0"
+  }
+}

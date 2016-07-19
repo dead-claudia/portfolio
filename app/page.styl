@@ -1,0 +1,55 @@
+@charset 'utf-8'
+
+.base-page
+    height: 100%
+    padding-top: 50px
+
+    $footer-height = 4em
+    $footer-padding = 0.8em
+    overflow: hidden
+
+    .base-content
+        height: "calc(100% - %s)" % ($footer-height - 1em + $footer-padding)
+        width: 100%
+        margin-bottom: -($footer-height)
+
+    .base-body
+        height: 100%
+        width: 95%
+        margin: 0 auto
+        overflow-y: auto
+        set-scrollbar()
+
+    .base-push
+        height: $footer-height
+
+    .base-footer
+        background-color: white
+        position: fixed
+        bottom: 0
+        left: 2.5%
+        height: $footer-height - $footer-padding
+        padding-top: 0.8em
+        width: 95%
+        border-top: 2px solid black
+        margin: 0 auto
+        text-align: center
+        font-size: 1.2em
+
+.base-header .route-button
+    margin-right: 1em
+
+    .button-text:after
+        content: "|"
+        margin-left: 0.4em
+        font-size: 1em
+        position: relative
+        top: -1px
+
+    // Straighten out the sinking icons for the buttons.
+    .button-symbol
+        position: relative
+        top: -1px
+
+    &:last-child
+        margin-right: 0
