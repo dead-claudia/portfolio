@@ -1,0 +1,64 @@
+@charset "utf-8"
+
+.loading-box
+    height: 100%
+
+    // Center vertically and horizontally
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+
+.loading-text
+    display: inline-block
+    height: 100%
+    font-size: 3em
+
+.loading-spinner
+    display: inline-block
+    position: relative
+    margin-left: 1em
+    height: 3em
+    width: 3em
+    animation-duration: 4s
+    animation-timing-function: linear
+    animation-iteration-count: infinite
+    // animation-play-state: paused
+    animation-name: loading-spinner
+
+@keyframes loading-spinner
+    from
+        transform: translateY(0.5em) rotate(0deg)
+    to
+        transform: translateY(0.5em) rotate(360deg)
+
+.loading-circle
+    display: block
+    position: absolute
+    height: 8px
+    width: 8px
+    background-color: #888
+    border-radius: 50%
+
+for i in (0..7)
+    scale(offset)
+        // Avoid some roundoff error.
+        top: 40% * (1 - offset * sin(i/8 * 360deg))
+        left: 40% * (1 - offset * cos(i/8 * 360deg))
+
+    @keyframes loading-circle-{i}
+        25% { scale: 1.5 }
+        50% { scale: 1 }
+
+    .loading-circle-{i}
+        scale: 1
+        animation-duration: 0.5s
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+        animation-name: "loading-circle-%s" % i
+        animation-delay: (1 - i/8) * 0.5s
+
+@require "./start.styl"
+@require "./page.styl"
+@require "./listing.styl"
+@require "./edit.styl"

@@ -9,7 +9,7 @@ const path = require("path")
 const chokidar = require("chokidar")
 const stylus = require("stylus")
 const autoprefixer = require("autoprefixer-stylus")
-const style = path.resolve(__dirname, "./app/index.styl")
+const style = path.resolve(__dirname, "../app/styles/index.styl")
 const el = document.createElement("style")
 
 function compile(message) {
@@ -27,9 +27,9 @@ function compile(message) {
 compile()
 document.head.appendChild(el)
 
-chokidar.watch(path.resolve(__dirname, "**/*.styl"), {
+chokidar.watch(path.resolve(__dirname, "../**/*.styl"), {
     atomic: true,
-    ignored: [path.resolve(__dirname, "node_modules/**/*.*")],
+    ignored: [path.resolve(__dirname, "../node_modules/**/*.*")],
 })
 .on("ready", () => console.log("Initial scan completed"))
 .on("add", file => compile(`File added: ${file}`))

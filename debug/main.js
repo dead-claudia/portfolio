@@ -3,13 +3,20 @@
 const path = require("path")
 const {app, globalShortcut} = require("electron")
 
-require("./init.js")(path.resolve(__dirname, "./debug.html"), win => {
+require("../app/init.js")(path.resolve(__dirname, "./index.html"), win => {
     // Easy way to reload and open dev tools.
-    globalShortcut.register("CmdOrCtrl+R", () => win.reload())
+    globalShortcut.register("CmdOrCtrl+R", () => {
+        win.webContents.reloadIgnoringCache()
+    })
+
+    globalShortcut.register("CmdOrCtrl+Shift+R", () => {
+        app.relaunch()
+        app.exit(0)
+    })
 
     win.webContents.openDevTools()
 
-    globalShortcut.register("CmdOrCtrl+Shift+J", () => {
+    globalShortcut.register("CmdOrCtrl+Shift+I", () => {
         win.webContents.toggleDevTools()
     })
 
@@ -19,6 +26,6 @@ require("./init.js")(path.resolve(__dirname, "./debug.html"), win => {
 
     app.on("will-quit", () => {
         globalShortcut.unregister("CmdOrCtrl+R")
-        globalShortcut.unregister("CmdOrCtrl+Shift+J")
+        globalShortcut.unregister("CmdOrCtrl+Shift+I")
     })
 })

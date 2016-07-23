@@ -1,9 +1,9 @@
 "use strict"
 
 const m = require("mithril")
+const model = require("../model.js")
 const RouteButton = require("./route-button.js")
 const Symbols = require("./symbols.js")
-const model = require("./model.js")
 
 exports.view = () => m(".start-page", [
     m(".start-wrapper", [
@@ -17,10 +17,7 @@ exports.view = () => m(".start-page", [
             text: "Get Started",
             class: "btn-lg",
             symbol: Symbols.Plus,
-            onclick: () => {
-                model.start()
-                m.route("/home")
-            },
+            onclick: () => model.setStarted().then(() => m.route.set("/home")),
         }),
     ]),
 ])
