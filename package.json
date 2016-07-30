@@ -5,10 +5,10 @@
   "description": "A simple, easy-to-use portfolio manager",
   "main": "app/main.js",
   "scripts": {
-    "preinstall": "node-pre-gyp --target=1.2.5 --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall && node-pre-gyp --target=1.2.5 --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall",
-    "debug:all": "ELECTRON_RUN_AS_NODE=true electron node_modules/node-inspector/bin/inspector.js & electron --debug-brk debug/main.js",
+    "postinstall": "node-pre-gyp --target=1.2.7 --runtime=electron --fallback-to-build --directory node_modules/v8-debug/ --dist-url=https://atom.io/download/atom-shell reinstall && node-pre-gyp --target=1.2.7 --runtime=electron --fallback-to-build --directory node_modules/v8-profiler/ --dist-url=https://atom.io/download/atom-shell reinstall",
+    "debug:all": "ELECTRON_RUN_AS_NODE=1 electron node_modules/node-inspector/bin/inspector.js & electron --debug-brk debug/main.js",
     "debug": "electron debug/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ELECTRON_RUN_AS_NODE=1 electron node_modules/.bin/tl"
   },
   "author": "Isiah Meadows",
   "license": "ISC",
@@ -19,17 +19,21 @@
     "eslint-config-isiahmeadows": "^0.1.6",
     "node-inspector": "^0.12.8",
     "node-pre-gyp": "^0.6.29",
+    "proxyquire": "^1.7.10",
     "stylus": "^0.54.5",
-    "thallium": "^0.2.2",
-    "watchify": "^3.7.0"
+    "thallium": "^0.2.5"
   },
   "dependencies": {
     "autosize": "^3.0.16",
-    "bootstrap": "^3.3.6",
-    "electron-prebuilt": "^1.2.7",
-    "jquery": "^2.2.4",
+    "bootstrap": "3",
+    "electron-prebuilt": "1.2.7",
+    "jquery": "2",
+    "jszip": "^3.0.0",
+    "minimatch": "^3.0.2",
     "minimist": "^1.2.0",
     "mithril": "^0.2.5",
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^4.2.0",
+    "simple-require-loader": "0.0.4",
+    "unzip": "^0.1.11"
   }
 }

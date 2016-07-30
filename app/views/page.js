@@ -15,7 +15,7 @@ const button = (route, type, text, symbol) =>
         onclick: () => m.route(route),
     })
 
-exports.view = ({children}) => m(".base-page", [
+exports.view = (_, children) => m(".base-page", [
     m(".base-header", [
         m("nav.navbar.navbar-default.navbar-fixed-top", m(".container-fluid", [
             m(".navbar-header", [
@@ -35,7 +35,7 @@ exports.view = ({children}) => m(".base-page", [
         ])),
     ]),
     m(".base-content", [
-        m(".base-body", children),
+        m(".base-body", [children]),
         m(".base-push"),
     ]),
     m(".base-footer", [

@@ -9,7 +9,7 @@ let photos
 
 model.getPhotos().then(listing => photos = listing)
 
-exports.view = () => m(Page, m(".listing-page", m(".listing-wrapper", [
+exports.view = () => m(Page, m(".listing-page", [
     photos == null ? m(Loading) : photos.map((photo, i) => m(".listing-item", {
         onclick: () => m.route(`/edit?index=${i}`),
     }, [
@@ -17,4 +17,4 @@ exports.view = () => m(Page, m(".listing-page", m(".listing-wrapper", [
         m("h2", photo.name),
         m("p", photo.shortDescription),
     ])),
-])))
+]))
